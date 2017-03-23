@@ -8,4 +8,6 @@ Step 1
 
 Use CMake to config c++11 program.
 
+Step 2
 
+Add opencv and eigen.
