@@ -4,10 +4,13 @@ compiler:
   - g++
 
 before_install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
   - sudo apt-get update
 
 install:
-  - sudo apt-get install q++-4.8
+  - sudo apt-get install build-essential
+  # For using c++11
+  - sudo apt-get install g++-4.9
 
 script:
   - g++ -v && cmake --version
