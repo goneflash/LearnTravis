@@ -11,6 +11,23 @@ before_install:
 install:
   # For using c++11.
   - sudo apt-get install -y g++-4.9
+  - sudo apt-get install -y build-essential
+
+  # Eigen
+  - sudo apt-get install -y libeigen3-dev
+
+  # OpenCV
+  - sudo apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+  # Optional
+  - sudo apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+  - curl -sL https://github.com/Itseez/opencv/archive/3.0.0-beta.zip > opencv.zip
+  - unzip opencv.zip
+  - cd opencv-3.0.0-beta
+  - mkdir build
+  - cd build
+  - cmake .. -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=OFF -D BUILD_NEW_PYTHON_SUPPORT=OFF -D WITH_V4L=OFF -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=OFF -D BUILD_EXAMPLES=OFF -D WITH_QT=OFF -D WITH_OPENGL=OFF ..
+  - make -j8
+  - sudo make install
 
 script:
   - ls -la /usr/bin | grep g++
