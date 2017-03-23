@@ -13,8 +13,11 @@ install:
   - sudo apt-get install -y g++-4.9
 
 script:
-  - g++ -v && cmake --version
   - ls -la /usr/bin | grep g++
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 1
   - g++ -v && cmake --version
+  - mkdir build
+  - cd build
+  - cmake ..
   - make
+  - ./main
