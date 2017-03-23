@@ -1,0 +1,14 @@
+language:
+  - cpp
+compiler:
+  - g++
+
+before_install:
+  - sudo apt-get update
+
+install:
+  - sudo apt-get install q++-4.8
+
+script:
+  - g++ -v && cmake --version
+  - make
