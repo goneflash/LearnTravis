@@ -17,3 +17,8 @@ Step 3
 Add gtest framework using MACRO.
 Enable test:
 mkdir build && cd build && cmake .. -DUSE_TEST=ON && make
+
+
+TODO:
+1) How to cache system status to avoid slow testing, e.g. install everything for
+every test.
