@@ -11,3 +11,9 @@ Use CMake to config c++11 program.
 Step 2
 
 Add opencv and eigen.
+
+Step 3
+
+Add gtest framework using MACRO.
+Enable test:
+mkdir build && cd build && cmake .. -DUSE_TEST=ON && make

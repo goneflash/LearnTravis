@@ -10,4 +10,17 @@ else()
   message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
+# cmake -DTEST=ON to enable the tests.
+option(USE_TEST "Build tests." OFF)
+if (USE_TEST)
+  enable_testing()
+  include_directories(thirdparty/googletest/googletest/include)
+  add_subdirectory(thirdparty/googletest/googletest)
+endif()
+
+
+add_subdirectory(testlib)
+
 add_executable(main main.cpp)
+target_link_libraries(main testlib)
+
