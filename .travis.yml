@@ -16,7 +16,7 @@ install:
   # Update cmake for using target_include_directories
   - wget https://cmake.org/files/v3.7/cmake-3.7.2.tar.gz
   - tar xf cmake-3.7.2.tar.gz
-  - cd cmake-3.2.2
+  - cd cmake-3.7.2
   - ./configure
   - make
   - sudo make install
