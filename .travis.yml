@@ -40,6 +40,8 @@ install:
   - cmake ..
   - make
   - sudo make install
+  - cd ..
+  - cd ..
 
   # Build and install Ceres
   - sudo apt-get install -y libsuitesparse-dev
@@ -52,6 +54,8 @@ install:
   - make -j4
   - make test
   - sudo make install
+  - cd ..
+  - cd ..
 
 
   # OpenCV
@@ -60,6 +64,8 @@ install:
   - sudo apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
   - curl -sL https://github.com/Itseez/opencv/archive/3.0.0-beta.zip > opencv.zip
   - unzip opencv.zip
+  # Add contrib repo for sfm,xfeatures2d ... libs
+  - git clone https://github.com/opencv/opencv_contrib.git
   - cd opencv-3.0.0-beta
   - mkdir build
   - cd build
