@@ -16,6 +16,7 @@ Step 3
 
 Add gtest framework using MACRO.
 Enable test:
+git submodule update --init
 mkdir build && cd build && cmake .. -DUSE_TEST=ON && make
 
 
