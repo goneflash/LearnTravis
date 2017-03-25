@@ -1,3 +1,8 @@
+dist:
+  - trusty
+sudo:
+  - required
+
 language:
   - cpp
 compiler:
@@ -12,7 +17,7 @@ install:
   # For using c++11.
   - sudo apt-get install -y g++-4.9
   - sudo apt-get install -y build-essential
-  - sudo apt-get install libgoogle-glog-dev
+  - sudo apt-get install -y libgoogle-glog-dev
   - sudo apt-get install -y libvtk5-dev
 
   # Update cmake for using target_include_directories
@@ -36,7 +41,6 @@ install:
   - sudo make install
 
   # Build and install Ceres
-  # - sudo apt-get install -y libgoogle-glog-dev
   - sudo apt-get install -y libsuitesparse-dev
   - wget http://ceres-solver.org/ceres-solver-1.12.0.tar.gz
   - tar zxf ceres-solver-1.12.0.tar.gz
