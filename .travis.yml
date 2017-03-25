@@ -12,6 +12,7 @@ install:
   # For using c++11.
   - sudo apt-get install -y g++-4.9
   - sudo apt-get install -y build-essential
+  - sudo apt-get inntall -y libvtk5-dev
 
   # Update cmake for using target_include_directories
   - wget https://cmake.org/files/v3.7/cmake-3.7.2.tar.gz
@@ -29,6 +30,7 @@ install:
   - cd eigen-eigen-67e894c6cd8f
   - mkdir build
   - cd build
+  - cmake ..
   - make
   - sudo make install
 
