@@ -6,8 +6,6 @@ compiler:
 before_install:
   # -y is for confirming Yes to add the ppa
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  # To build Ceres as a *shared* library, must add the PPA:
-  - sudo add-apt-repository -y ppa:bzindovic/suitesparse-bugfix-1319687
   - sudo apt-get update
 
 install:
