@@ -23,7 +23,14 @@ install:
   - cd ..
 
   # Eigen
-  - sudo apt-get install -y libeigen3-dev
+  # - sudo apt-get install -y libeigen3-dev
+  - wget http://bitbucket.org/eigen/eigen/get/3.3.3.tar.gz
+  - tar zxf 3.3.3.tar.gz
+  - cd eigen-eigen-67e894c6cd8f
+  - mkdir build
+  - cd build
+  - make
+  - sudo make install
 
   # Build and install Ceres
   # - sudo apt-get install -y libgoogle-glog-dev
