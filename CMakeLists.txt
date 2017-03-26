@@ -12,15 +12,25 @@ endif()
 
 # cmake -DTEST=ON to enable the tests.
 option(USE_TEST "Build tests." OFF)
-if (USE_TEST)
-  enable_testing()
-  include_directories(thirdparty/googletest/googletest/include)
-  add_subdirectory(thirdparty/googletest/googletest)
-endif()
 
+find_package( Ceres REQUIRED )
+find_package( OpenCV REQUIRED )
+find_package( Eigen3 REQUIRED )
+
+message(STATUS "OpenCV library status:")
+message(STATUS "    version: ${OpenCV_VERSION}")
+message(STATUS "    libraries: ${OpenCV_LIBS}")
+message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
+message(STATUS "Eigen library status:")
+message(STATUS "    include path: ${EIGEN3_INCLUDE_DIR}")
 
 add_subdirectory(testlib)
 
 add_executable(main main.cpp)
 target_link_libraries(main testlib)
 
+if (USE_TEST)
+  enable_testing()
+  include_directories(thirdparty/googletest/googletest/include)
+  add_subdirectory(thirdparty/googletest/googletest)
+endif()
